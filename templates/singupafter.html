@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{{ title }}{% endblock title%}
+
+{% block content %}
+<h3>{% trans 'You\'ve created user' %} {{object.email}}</h3>
+
+<p>{% trans 'You can log in to the site.' %}</p>
+
+{% endblock content%}

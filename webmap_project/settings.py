@@ -37,7 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #ThirdParty
+    'crispy_forms',
+
+
+    #Local
     'users.apps.UsersConfig', #My new app
+    'pages.apps.PagesConfig', #My pages app
 ]
 
 MIDDLEWARE = [
@@ -121,5 +127,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
+# AUTH_USER_MODEL
 AUTH_USER_MODEL = 'users.CustomUser'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+map = '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'
+
+
+DEFAULT_FROM_EMAIL = 'dmuhamedjarov@gmail.com'
+SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = map
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

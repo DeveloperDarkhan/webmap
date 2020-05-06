@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     #Local
     'users.apps.UsersConfig', #My new app
     'pages.apps.PagesConfig', #My pages app
+    'articles.apps.ArticlesConfig', #My articles app
 ]
 
 MIDDLEWARE = [
@@ -135,13 +136,12 @@ LOGOUT_REDIRECT_URL = 'home'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-map = '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'
-
+#Config for sendgrid.com
 
 DEFAULT_FROM_EMAIL = 'dmuhamedjarov@gmail.com'
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = map
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True

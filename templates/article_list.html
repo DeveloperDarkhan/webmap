@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+{%for obj in object_list%}
+<div class="card">
+    <div class="card-header">
+        <span class="font-weight-bold">#{{ forloop.counter }} {{obj.title}}</span> &middot;
+        <span class="text-muted">by {{obj.get_name}} | {{obj.date}}</span>
+    </div>
+<div class="card-body">
+    {{obj.body}}
+</div>
+<div class="card-footer text-center text-muted">
+    <a href="">Edit</a> | <a href="">Delete</a>
+</div>
+</div>
+<br />
+{%endfor%}
+
+{%endblock content%}
